@@ -55,7 +55,13 @@ class App extends React.Component {
             ))}
           </ul>
         </div>
-        <Order />
+        <Order
+          /*take a copy off all states
+          {...this.state}*/
+          /* passes state of each individual state item*/
+          fishes={this.state.fishes}
+          order={this.state.order}
+        />
         <Inventory
           addFish={this.addFish}
           loadSampleFishes={this.loadSampleFishes}
