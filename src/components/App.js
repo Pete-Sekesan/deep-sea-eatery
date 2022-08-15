@@ -5,12 +5,21 @@ import Order from './Order';
 import sampleFishes from '../sample-fishes';
 import Fish from './Fish';
 import fishes from '../sample-fishes';
+import base from '../base';
 
 class App extends React.Component {
   state = {
     fishes: {},
     order: {},
   };
+
+  componentDidMount() {
+    const { params } = this.props.match;
+    this.ref = base.syncState(`${params.storeId}/fishes`, {
+      context: this,
+      state: 'fishes',
+    });
+  }
 
   addFish = (fish) => {
     //take a copy of existing state, never mutate original state
