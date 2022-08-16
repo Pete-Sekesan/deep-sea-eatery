@@ -6,6 +6,7 @@ import sampleFishes from '../sample-fishes';
 import Fish from './Fish';
 import fishes from '../sample-fishes';
 import base from '../base';
+import EditFishForm from './EditFishForm';
 
 class App extends React.Component {
   state = {
@@ -90,6 +91,7 @@ class App extends React.Component {
         <Inventory
           addFish={this.addFish}
           loadSampleFishes={this.loadSampleFishes}
+          fishes={this.state.fishes}
         />
       </div>
     );
